@@ -2,12 +2,11 @@
 
 import { motion } from 'framer-motion';
 import { useState, useMemo } from 'react';
-import Hero from '@/components/Hero';
-import HolocronCard from '@/components/HolocronCard';
-import HolocronModal from '@/components/HolocronModal';
-import Filters from '@/components/Filters';
-import Footer from '@/components/Footer';
-import { holocronData, HolocronEntry } from '@/lib/data';
+import Hero from '../components/Hero';
+import HolocronCard from '../components/HolocronCard';
+import HolocronModal from '../components/HolocronModal';
+import Filters from '../components/Filters';
+import { holocronData, HolocronEntry } from '../lib/data';
 
 export default function HomePage() {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
@@ -124,8 +123,6 @@ export default function HomePage() {
           )}
         </div>
       </section>
-
-      <Footer />
 
       {/* Modal */}
       {selectedEntry && (

@@ -52,7 +52,7 @@ export default function SithPage() {
   };
 
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen">
       {/* Warning Banner */}
       <motion.div
         className="bg-red-900/20 border-y border-red-500/50 py-4"

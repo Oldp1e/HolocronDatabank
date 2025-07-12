@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 export default function Hero() {
   return (
@@ -151,33 +152,27 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.4, duration: 0.8 }}
         >
-          <motion.a
-            href="/jedi"
+          <motion.div
             className="group relative px-8 py-4 text-lg font-semibold text-white rounded-xl overflow-hidden cursor-pointer inline-flex items-center space-x-3 bg-gradient-to-r from-holo-blue to-holo-purple shadow-holo hover:shadow-holo-strong transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-holo-blue/50"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            onClick={(e) => {
-              // Verificar se o link está funcionando
-              console.log('Navegando para /jedi');
-            }}
           >
-            <span>⚡</span>
-            <span>Explorar Arquivos Jedi</span>
-          </motion.a>
+            <Link href="/jedi" className="flex items-center space-x-3">
+              <span>⚡</span>
+              <span>Explorar Arquivos Jedi</span>
+            </Link>
+          </motion.div>
 
-          <motion.a
-            href="/sith"
+          <motion.div
             className="group relative px-8 py-4 text-lg font-semibold text-red-400 rounded-xl overflow-hidden cursor-pointer inline-flex items-center space-x-3 border-2 border-red-500/50 bg-transparent hover:bg-red-500/10 hover:border-red-400 hover:text-red-300 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-red-500/50"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            onClick={(e) => {
-              // Verificar se o link está funcionando
-              console.log('Navegando para /sith');
-            }}
           >
-            <span>🔴</span>
-            <span>Arquivos Restritos</span>
-          </motion.a>
+            <Link href="/sith" className="flex items-center space-x-3">
+              <span>🔴</span>
+              <span>Arquivos Restritos</span>
+            </Link>
+          </motion.div>
         </motion.div>
 
         {/* Stats */}

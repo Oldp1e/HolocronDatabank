@@ -1,9 +1,8 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import '@/styles/globals.css'
-import HolographicBackground from '@/components/HolographicBackground'
 import Navbar from '@/components/Navbar'
-import Footer from '@/components/Footer'
+import HolographicBackground from '@/components/HolographicBackground'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -32,10 +31,9 @@ export default function RootLayout({
       <body className={inter.className}>
         <HolographicBackground />
         <Navbar />
-        <main className="relative z-10">
+        <main className="relative z-10 pt-16">
           {children}
         </main>
-        <Footer />
       </body>
     </html>
   )
