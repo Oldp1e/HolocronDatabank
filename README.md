@@ -2,6 +2,9 @@
 
 ![Holocron Databank](https://img.shields.io/badge/Status-Desenvolvido-brightgreen) ![Next.js](https://img.shields.io/badge/Next.js-14.0.4-black) ![Tailwind CSS](https://img.shields.io/badge/Tailwind-CSS-blue) ![Framer Motion](https://img.shields.io/badge/Framer-Motion-purple)
 
+![Uploading image.png…]()
+
+
 **Holocron Databank** é um banco de dados fictício inspirado no universo Star Wars, simulando uma interface holográfica e tecnológica de um Holocron Jedi/Sith. O projeto apresenta uma experiência imersiva com design moderno, efeitos visuais avançados e uma interface de usuário completamente responsiva.
 
 ## ✨ Características Principais
