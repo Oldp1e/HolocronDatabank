@@ -1,0 +1,171 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --background: #0a0a0f;
+  --foreground: #f8f9fa;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(157, 78, 221, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(114, 9, 183, 0.1) 0%, transparent 50%);
+  min-height: 100vh;
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #00d4ff, #9d4edd);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #00b8e6, #8a44c4);
+}
+
+/* Classes utilitárias personalizadas */
+@layer components {
+  .glass-panel {
+    @apply bg-white/10 backdrop-blur-md border border-white/20 rounded-xl shadow-glass;
+  }
+  
+  .holo-border {
+    @apply border border-holo-blue/50 shadow-holo;
+  }
+  
+  .holo-text {
+    @apply text-transparent bg-clip-text bg-holo-gradient;
+  }
+  
+  .btn-holo {
+    @apply px-6 py-3 rounded-lg bg-gradient-to-r from-holo-blue/20 to-holo-purple/20 
+           border border-holo-blue/50 text-white font-medium transition-all duration-300
+           hover:from-holo-blue/30 hover:to-holo-purple/30 hover:shadow-holo-strong
+           focus:outline-none focus:ring-2 focus:ring-holo-blue/50;
+  }
+  
+  .btn-primary {
+    @apply px-6 py-3 rounded-lg bg-gradient-to-r from-holo-blue to-holo-purple 
+           text-white font-medium transition-all duration-300
+           hover:from-holo-blue/90 hover:to-holo-purple/90 hover:shadow-holo-strong
+           focus:outline-none focus:ring-2 focus:ring-holo-blue/50;
+  }
+  
+  .btn-secondary {
+    @apply px-6 py-3 rounded-lg border-2 border-holo-blue/50 text-holo-blue 
+           font-medium transition-all duration-300 bg-transparent
+           hover:bg-holo-blue/10 hover:border-holo-blue/70
+           focus:outline-none focus:ring-2 focus:ring-holo-blue/50;
+  }
+  
+  .btn-danger {
+    @apply px-6 py-3 rounded-lg border-2 border-red-500/50 text-red-400 
+           font-medium transition-all duration-300 bg-transparent
+           hover:bg-red-500/10 hover:border-red-400 hover:text-red-300
+           focus:outline-none focus:ring-2 focus:ring-red-500/50;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-holo-strong;
+  }
+  
+  .text-glow {
+    @apply animate-glow;
+  }
+}
+
+/* Efeitos especiais */
+.hologram-overlay {
+  position: relative;
+  overflow: hidden;
+}
+
+.hologram-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 212, 255, 0.2),
+    transparent
+  );
+  animation: shimmer 2s infinite;
+  z-index: 1;
+}
+
+.hologram-overlay > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Efeito de interferência holográfica */
+@keyframes glitch {
+  0%, 100% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+}
+
+.glitch {
+  animation: glitch 0.3s ease-in-out;
+}
+
+/* Partículas de fundo */
+.particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Loading spinner holográfico */
+.holo-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid transparent;
+  border-top: 3px solid #00d4ff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
